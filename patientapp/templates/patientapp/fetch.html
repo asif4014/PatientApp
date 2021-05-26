@@ -1,0 +1,19 @@
+{% extends "patientapp/base.html"%}
+{% load static %}
+
+{% block content %}
+
+<div class="w3-bar w3-white w3-center w3-padding-64 w3-opacity-min w3-hover-opacity-off">
+
+    <form action="auth_user" method="POST">
+        {% csrf_token %}
+
+
+        <label for="uid">Unique Id:</label>
+        <input type="text" id="uid" name="uid"><br><br>
+
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
