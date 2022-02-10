@@ -3,16 +3,24 @@
 
 {% block content %}
 <div class="w3-bar w3-white w3-center w3-padding-8 w3-opacity-min w3-hover-opacity-off">
-    <h3>Patient information are ....</h3>
+    <h3>Employees details are ....</h3>
 </div><br>
 <div class="w3-bar w3-white w3-center w3-padding-64 w3-opacity-min w3-hover-opacity-off">
 
     {% for i in obj %}
     <div class="w3-bar w3-light-blue w3-center w3-padding-8 w3-opacity-min w3-hover-opacity-off">
+        
+        <h3 style="margin:20px;">Emp Name: {{i.empname}}</h3>
+        <h3 style="margin:20px;">Mobile No: {{i.mobile}}</h3>
+        <h3 style="margin:20px;">Email: {{i.email}}</h3>
 
-        <h3 style="margin:20px;">Username: {{i.username}}</h3>
-        <h3 style="margin:20px;">UniqueID: {{i.uniqueID}}</h3>
-        <h3 style="margin:20px;">DOB: {{i.dob}}</h3>
+        <h6>{{i.resume_path}}</h6>
+
+        <h3><a href="../../../media/{{i.resume_path}}" target="_blank" class="link-button"
+                style="text-decoration: none;">
+                Resume</a></h3>
+
+
     </div>
     {% endfor %}
 </div>

@@ -8,13 +8,21 @@
     <h2 class="w3-center">Register Here...</h2>
 </div> <br>
 
-<form class="w3-container w3-card-3 w3-padding-16 w3-light-blue" action="register" method="POST">
+<form class="w3-container w3-card-3 w3-padding-16 w3-light-blue" action="register" method="post"
+    enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="w3-section">
         <label for="uname"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Username:</label>
-        <input class="w3-input" type="text" id="username" name="username" required>
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Emp
+            Name:</label>
+        <input class="w3-input" type="text" id="username" name="empname" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">Mobile No</label><br>
+        <input type="tel" name="mobile" id="phone_number" pattern="[789][0-9]{9}" required="required" />
+
     </div>
 
     <div class="w3-section">
@@ -25,30 +33,24 @@
 
     <div class="w3-section">
         <label for="uname"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Password:</label>
-        <input class="w3-input" type="text" id="password" name="password">
-    </div>
-    <div class="w3-section">
-        <label for="email"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Re-type:</label>
-        <input class="w3-input" type="text" id="repass" name="repass">
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Skill:</label>
+        <input class="w3-input" type="text" id="username" name="skill" required>
     </div>
 
 
     <div class="w3-section">
         <label for="uid"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Unique
-            Id:</label>
-        <input class="w3-input" type="text" id="uid" name="uid" required>
-    </div>
-    <div class="w3-section">
-        <label for="birthday"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Date
-            of Birth:</label>
-        <input class="w3-input" type="date" id="birthday" name="dob" required>
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Experience:</label>
+        <input class="w3-input" type="text" id="uid" name="experience" required>
     </div>
 
-    <button type="submit" class="w3-button w3-center w3-indigo">Register</button>
+    <div class="w3-section">
+        <label for="myfile">Upload Resume:</label>
+        <input type="file" id="myfile" name="resume">
+
+    </div>
+
+    <button type="submit" class="w3-button w3-center w3-indigo">Submit</button>
 
 </form>
 
