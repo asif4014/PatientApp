@@ -33,36 +33,46 @@
 					{% if messages %}
 					<ul class="messages">
 						{% for message in messages %}
-						{{ message }}
+
 						{% endfor %}
 					</ul>
 					{% endif %}
-					<div class="login-signin">
-						<div class="mb-20">
-							<h3>Sign In</h3>
-							<div class="text-muted font-weight-bold">Enter your details to login to your account:</div>
+					<div
+						style="border: transparent ; background-color: rgb(203, 219, 233); margin-left: 10rem; padding-left: -10rem; margin-top: 5rem;">
+						<div class="login-signin">
+							<div class="mb-20">
+								<h3
+									style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: #060674;">
+									Hello there!</h3>
+
+							</div>
+							<form class="form" id="kt_login_signin_form" method="POST" action="{% url 'auth_login' %}"
+								style="margin-left: 0.5rem;margin-right: 0.5rem;">
+								{% csrf_token %}
+								<div class="form-group mb-4" style="width: 25rem;">
+									<input class="form-control h-auto form-control-solid py-3 px-8" type="text"
+										placeholder="Username" name="username" autocomplete="off"
+										style="background-color: white;
+									color:#060674;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bold;" />
+								</div>
+								<div class="form-group mb-3">
+									<input class="form-control h-auto form-control-solid py-3 px-8" type="password"
+										placeholder="Password" name="password"
+										style="background-color: white;
+									font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:#060674; font-weight: bold;" />
+								</div>
+
+								<button id="kt_login_signin_submit" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+							 ; font-weight: bold; background-color: #060674;color: aliceblue;"
+									class="btn btn-primary font-weight-bold px-4 py-3 my-3 mx-5">Login</button>
+							</form>
+							<!-- <div class="mt-10">
+								<span class="opacity-70 mr-4">Don't have an account yet?</span>
+								<a href="{% url 'signup' %}" id="kt_login_signup"
+									class="text-muted text-hover-primary font-weight-bold">Sign Up!</a>
+							</div> -->
 						</div>
-						<form class="form" id="kt_login_signin_form" method="POST" action="{% url 'auth_login' %}">
-							{% csrf_token %}
-							<div class="form-group mb-5">
-								<input class="form-control h-auto form-control-solid py-4 px-8" type="text"
-									placeholder="Username" name="username" autocomplete="off" />
-							</div>
-							<div class="form-group mb-5">
-								<input class="form-control h-auto form-control-solid py-4 px-8" type="password"
-									placeholder="Password" name="password" />
-							</div>
-
-							<button id="kt_login_signin_submit"
-								class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">Sign In</button>
-						</form>
-						<!-- <div class="mt-10">
-							<span class="opacity-70 mr-4">Don't have an account yet?</span>
-							<a href="{% url 'signup' %}" id="kt_login_signup"
-								class="text-muted text-hover-primary font-weight-bold">Sign Up!</a>
-						</div> -->
 					</div>
-
 
 </body>
 

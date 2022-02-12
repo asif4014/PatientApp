@@ -21,45 +21,47 @@
     <center>
 
 
-        <div class="w3-container  w3-light-blue">
-            <h2 class="w3-center">Resource Management App</h2>
+        <div class="w3-container" style="background-color: #060674;">
+            <h2 class="w3-center"
+                style="color:aliceblue;font-weight: bold; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                Resource Management App</h2>
         </div>
+        <div style="background-color: white;">
+            <div class="w3-container w3-white w3-padding-24 w3-theme-l5">
+                <div class="w3-container w3-red w3-padding-8 w3-theme-l5">
+                    {% if messages %}
+                    <ul class="messages" style="background-color:white; font-size: 20px;">
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
 
-        <div class="w3-container w3-white w3-padding-24 w3-theme-l5">
-            <div class="w3-container w3-red w3-padding-8 w3-theme-l5">
-                {% if messages %}
-                <ul class="messages" style="background-color:white; font-size: 20px;">
-                    {% for message in messages %}
-                    {{ message }}
-                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
 
-                </ul>
-                {% endif %}
+
+
+                <div class="w3-col m5">
+                    <img src="{% static 'patientapp/images/tek.jpg' %}" width="450" height="500"
+                        style="background-color:transparent; font-size: 20px;">
+                </div>
+
+                <div class="w3-col m7 ">
+
+
+                    {% block content %} {% endblock %}
+
+
+                </div>
+
             </div>
-
-
-
-            <div class="w3-col m5">
-                <img src="{% static 'patientapp/images/tek.png' %}" width="500" height="553"
-                    style="background:transparent; font-size: 20px;">
-            </div>
-
-            <div class="w3-col m7 ">
-
-
-                {% block content %} {% endblock %}
-
-
-            </div>
-
-
 
     </center>
     <center>
-        <footer class="bg-dark text-center text-lg-start">
+        <footer>
 
-            <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
+            <div class="text-center text-light p-3" style="background-color: #0d0d3f;">
+                © 2022 Copyright:
                 <a class="text-light" href="#">The Builders</a>
             </div>
 

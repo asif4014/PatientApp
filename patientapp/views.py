@@ -58,7 +58,7 @@ def register(request):
             obj = EmpInfo(empname=empname, mobile=mobile,
                           email=email, experience=experience, skill=skill, resume=resume, resume_path=path)
             obj.save()
-            messages.success(request, "Employee registerd successfully")
+            messages.success(request, "Details saved successfully")
             return redirect(home)
     else:
         print("File didn't receive.")
@@ -76,5 +76,5 @@ def auth_user(request):
             context = {'obj': info}
             return render(request, 'patientapp/showinfo.html', context)
         else:
-            messages.warning(request, f'OOPS!! Employee is not found')
-            return render(request, 'patientapp/regdform.html')
+            messages.warning(request, f'OOPS!! Resource is not found')
+            return redirect(addUserInfo)
